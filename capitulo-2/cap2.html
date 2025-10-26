@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2: Variables y tipos de datos simples | Curso de Python</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* Estilos específicos para la página de contenido (Reutilizados del cap 1) */
+        .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+        }
+        .code-block {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #d63384; /* Color de sintaxis simulado */
+        }
+        .note {
+            padding: 15px;
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+        }
+        .tip {
+            padding: 15px;
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+            margin: 20px 0;
+        }
+        .exercise-list li {
+            margin-bottom: 10px;
+        }
+        .next-chapter-link {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .next-chapter-link:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="gallery.html" style="color: white; text-decoration: none; float: left;">← Volver a la Galería</a>
+        <h1>Curso de Python: 20 Capítulos</h1>
+    </header>
+
+    <div class="content-container">
+
+        <h1>🧩 Capítulo 2 — Variables y tipos de datos simples</h1>
+
+        <h2>🎯 Objetivo del capítulo</h2>
+        [cite_start]<p>Aprender a **guardar información en variables**, **usar texto y números**, y **entender cómo Python maneja distintos tipos de datos**[cite: 4].</p>
+
+        <h2>🔹 ¿Qué es una variable?</h2>
+        [cite_start]<p>Una **variable** es un nombre que guarda un valor[cite: 6]. [cite_start]Podés imaginarla como una caja con etiqueta, donde guardás algo que luego podés usar[cite: 7].</p>
+        [cite_start]<p>Ejemplo[cite: 8]:</p>
+        <div class="code-block">
+            <code>
+                mensaje = "Hola, Python!" <br>
+                print(mensaje)
+            </code>
+        </div>
+        [cite_start]<p>➡️ Python guarda el texto `"Hola, Python!"` dentro de la variable `mensaje`, y luego `print(mensaje)` muestra ese valor en pantalla[cite: 11].</p>
+
+        <h2>🔹 Reglas para nombrar variables</h2>
+        <ul>
+            [cite_start]<li>Usá solo **letras, números y guiones bajos** (`_`)[cite: 13].</li>
+            [cite_start]<li>**No pueden empezar con un número**[cite: 14].</li>
+            [cite_start]<li>Evitá usar **palabras reservadas** como `print`, `for`, `if`, etc.[cite: 15].</li>
+            [cite_start]<li>Usá nombres descriptivos (ej: `nombre_usuario = "Juan"`, `edad = 25`)[cite: 16, 17].</li>
+        </ul>
+        <div class="tip">
+            [cite_start]💡 **Consejo:** Usá siempre **minúsculas y guiones bajos** (estilo *snake_case*)[cite: 18].
+        </div>
+
+        <h2>🔹 Texto (strings)</h2>
+        [cite_start]<p>Los textos en Python se llaman **strings**[cite: 20]. [cite_start]Se escriben entre **comillas simples o dobles**[cite: 20]:</p>
+        <div class="code-block">
+            <code>
+                nombre = "Enrique" <br>
+                mensaje = 'Bienvenido al curso'
+            </code>
+        </div>
+        [cite_start]<p>Ambos formatos funcionan igual[cite: 23].</p>
+
+        <h3>Métodos útiles para texto</h3>
+        [cite_start]<p>Podés transformar mayúsculas y minúsculas fácilmente[cite: 25]:</p>
+        <div class="code-block">
+            <code>
+                nombre = "enrique gustavo" <br>
+                print(nombre.title())   <span style="color:#6c757d;"># Enrique Gustavo</span><br>
+                print(nombre.upper())   <span style="color:#6c757d;"># ENRIQUE GUSTAVO</span><br>
+                print(nombre.lower())   <span style="color:#6c757d;"># enrique gustavo</span>
+            </code>
+        </div>
+        [cite_start]<p>📘 Estos son **métodos de string** — pequeñas funciones integradas en los textos[cite: 30].</p>
+
+        <h3>Concatenar texto</h3>
+        [cite_start]<p>Podés combinar textos con el símbolo `+`[cite: 32]:</p>
+        <div class="code-block">
+            <code>
+                nombre = "Enrique" <br>
+                apellido = "Décima" <br>
+                nombre_completo = nombre + " " + apellido <br>
+                print("Hola, " + nombre_completo + "!")
+            </code>
+        </div>
+        [cite_start]<p>➡️ Resultado: `Hola, Enrique Décima!`[cite: 37, 38].</p>
+
+        <h3>Espacios y saltos de línea</h3>
+        [cite_start]<p>`\n` agrega un **salto de línea**, `\t` agrega una **tabulación**[cite: 40].</p>
+        <div class="code-block">
+            <code>print("Lenguajes:\nPython\nC\nJavaScript")</code>
+        </div>
+        [cite_start]<p>💡 Esto imprime cada lenguaje en una línea diferente[cite: 42].</p>
+
+        <h3>Eliminar espacios extra</h3>
+        <div class="code-block">
+            <code>
+                nombre = "  python  " <br>
+                [cite_start]print(nombre.strip())   <span style="color:#6c757d;"># quita espacios al inicio y al final</span> [cite: 45]<br>
+                [cite_start]print(nombre.lstrip())  <span style="color:#6c757d;"># solo al inicio (left strip)</span> [cite: 46]<br>
+                [cite_start]print(nombre.rstrip())  <span style="color:#6c757d;"># solo al final (right strip)</span> [cite: 47]
+            </code>
+        </div>
+
+        <h2>🔹 Números en Python</h2>
+        [cite_start]<p>Podés usar **enteros (`int`)** o **decimales (`float`)**[cite: 49]:</p>
+        <div class="code-block">
+            <code>
+                edad = 30 <br>
+                pi = 3.1416
+            </code>
+        </div>
+        [cite_start]<p>Operaciones básicas[cite: 52]:</p>
+        <div class="code-block">
+            <code>
+                print(2 + 3)    <span style="color:#6c757d;"># 5</span> <br>
+                print(2 * 3)    <span style="color:#6c757d;"># 6</span> <br>
+                print(3 ** 2)   <span style="color:#6c757d;"># potencia: 9</span>
+            </code>
+        </div>
+        [cite_start]<p>👉 El operador `**` representa una **potencia**[cite: 56].</p>
+
+        <h3>Convertir números a texto</h3>
+        [cite_start]<p>Si querés incluir un número dentro de un texto, usá la función **`str()`**[cite: 58]:</p>
+        <div class="code-block">
+            <code>
+                edad = 25 <br>
+                mensaje = "Tengo " + str(edad) + " años." <br>
+                print(mensaje)
+            </code>
+        </div>
+        <div class="note">
+            [cite_start]💥 **¡Atención!** Sin `str()`, obtendrás un error porque no se puede unir texto con número directamente[cite: 62].
+        </div>
+
+        <h2>🔹 Comentarios en el código</h2>
+        <p>Los comentarios ayudan a entender el propósito del programa. [cite_start]Python los ignora cuando ejecuta el código[cite: 64].</p>
+        <div class="code-block">
+            <code>
+                # [cite_start]Este programa muestra un saludo [cite: 65]<br>
+                print("Hola, mundo!")
+            </code>
+        </div>
+        [cite_start]<p>Todo lo que esté después del símbolo `#` no se ejecuta[cite: 67].</p>
+
+        <h2>🔹 El “Zen de Python”</h2>
+        [cite_start]<p>Python tiene una filosofía escrita en código[cite: 69]:</p>
+        <div class="code-block">
+            <code>import this</code>
+        </div>
+        [cite_start]<p>📜 El resultado muestra frases como: **"Bello es mejor que feo. Explícito es mejor que implícito. Simple es mejor que complejo."**[cite: 72]. [cite_start]Estas frases resumen cómo escribir buen código en Python: claro, simple y legible[cite: 73].</p>
+
+        <h2>🧠 Ejercicios sugeridos</h2>
+        <ul class="exercise-list">
+            [cite_start]<li>**Mensaje simple:** Crea una variable `mensaje` y mostrala en pantalla[cite: 75].</li>
+            [cite_start]<li>**Nombre en mayúsculas:** Pedí un nombre y mostralo en mayúsculas, minúsculas y con la primera letra en mayúscula (usando los métodos `.upper()`, `.lower()` y `.title()`)[cite: 76].</li>
+            [cite_start]<li>**Número favorito:** Guarda tu número favorito en una variable y mostralo en una frase, usando `str()` para la conversión[cite: 77].</li>
+            [cite_start]<li>**Comentario:** Agrega un comentario que explique qué hace tu programa[cite: 78].</li>
+        </ul>
+        
+        <h2>🏁 Resumen</h2>
+        <ul>
+            [cite_start]<li>Las **variables** guardan información[cite: 80].</li>
+            [cite_start]<li>Los **strings** son textos con métodos útiles como `.upper()` o `.strip()`[cite: 81].</li>
+            [cite_start]<li>Los **números** se pueden operar y convertir a texto con `str()`[cite: 82].</li>
+            [cite_start]<li>Los **comentarios** sirven para documentar tu código[cite: 83].</li>
+            [cite_start]<li>Python promueve la **claridad y simplicidad**[cite: 84].</li>
+        </ul>
+
+        <a href="capitulo-3.html" class="next-chapter-link">
+            Siguiente: Capítulo 3: Introducción a las listas →
+        </a>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Mi Curso de Python</p>
+    </footer>
+
+</body>
+</html>

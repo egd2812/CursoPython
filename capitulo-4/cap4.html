@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4: Trabajando con listas | Curso de Python</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* Estilos específicos para la página de contenido (Reutilizados de caps anteriores) */
+        .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+        }
+        .code-block {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #d63384; 
+        }
+        .note {
+            padding: 15px;
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+        }
+        .tip {
+            padding: 15px;
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+            margin: 20px 0;
+        }
+        .exercise-list li {
+            margin-bottom: 10px;
+        }
+        .next-chapter-link {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .next-chapter-link:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="gallery.html" style="color: white; text-decoration: none; float: left;">← Volver a la Galería</a>
+        <h1>Curso de Python: 20 Capítulos</h1>
+    </header>
+
+    <div class="content-container">
+
+        <h1>🧮 Capítulo 4 — Trabajando con listas</h1>
+        <p>Este capítulo está basado en el libro <em>Python Crash Course</em>, traducido, explicado y adaptado al español.</p>
+
+        <h2>🎯 Objetivo del capítulo</h2>
+        <p>Aprender a **recorrer listas automáticamente**, **crear listas de números**, **usar rebanadas (*slices*)** y **mejorar el estilo de tu código**.</p>
+
+        <h2>🔹 Recorrer una lista completa (Bucle `for`)</h2>
+        [cite_start]<p>Recorrer una lista significa **hacer algo con cada elemento**[cite: 6]. [cite_start]Para eso, usamos un **bucle `for`**[cite: 7]:</p>
+        <div class="code-block">
+            <code>
+                nombres = ['Ana', 'Carlos', 'Lucía']<br>
+                for nombre in nombres:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Hola, " + nombre + "!")<br>
+                print("¡Gracias a todos por venir!")
+            </code>
+        </div>
+        <p>➡️ Python recorre cada elemento de la lista, uno por uno. [cite_start]Todo lo que esté **indentado (con sangría)** dentro del bloque `for` se ejecuta en cada vuelta[cite: 12, 13].</p>
+
+        <h3>La importancia de la indentación</h3>
+        [cite_start]<p>Python **usa espacios o tabulaciones** para saber qué líneas pertenecen a un bloque[cite: 15]. [cite_start]Si olvidás indentar, obtendrás un error (`IndentationError`)[cite: 16, 21].</p>
+        <div class="tip">
+            [cite_start]💡 **Recomendación:** Usá **4 espacios** por nivel de indentación (la convención oficial)[cite: 25].
+        </div>
+
+        <h2>🔹 Crear listas de números con `range()`</h2>
+        [cite_start]<p>Python incluye la función **`range()`** para generar secuencias numéricas[cite: 32].</p>
+        <div class="code-block">
+            <code>
+                for valor in range(1, 5):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print(valor)
+            </code>
+        </div>
+        [cite_start]<p>➡️ Esto imprime los números 1, 2, 3 y 4. **Advertencia:** El número final **no se incluye** (el rango es hasta uno antes)[cite: 35].</p>
+
+        <h3>Convertir un rango en lista</h3>
+        [cite_start]<p>Podés convertir un rango en una lista usando `list()`[cite: 36]:</p>
+        <div class="code-block">
+            <code>
+                numeros = list(range(1, 6)) <br>
+                print(numeros)  <span style="color:#6c757d;"># [1, 2, 3, 4, 5]</span>
+            </code>
+        </div>
+
+        <h3>Listas numéricas con pasos personalizados</h3>
+        [cite_start]<p>El tercer argumento de `range()` indica el **“salto” o incremento** entre valores[cite: 42]:</p>
+        <div class="code-block">
+            <code>
+                pares = list(range(2, 11, 2)) <br>
+                print(pares)  <span style="color:#6c757d;"># [2, 4, 6, 8, 10]</span>
+            </code>
+        </div>
+
+        <h3>Estadísticas simples en listas</h3>
+        [cite_start]<p>Python tiene funciones incorporadas para listas de números[cite: 43]:</p>
+        <div class="code-block">
+            <code>
+                digitos = [1, 2, 3, 4, 5, 6, 7, 8, 9]<br>
+                print(min(digitos))  <span style="color:#6c757d;"># Mínimo: 1</span><br>
+                print(max(digitos))  <span style="color:#6c757d;"># Máximo: 9</span><br>
+                print(sum(digitos))  <span style="color:#6c757d;"># Suma total: 45</span>
+            </code>
+        </div>
+
+        <h2>🔹 Comprensiones de listas (*List Comprehensions*)</h2>
+        [cite_start]<p>Son una forma **rápida y elegante** de crear listas, usando una sintaxis concisa que equivale a un bucle `for` en una sola línea[cite: 49, 55].</p>
+        <p>Ejemplo: Calcular los cuadrados de los números del 1 al 10:</p>
+        <div class="code-block">
+            <code>
+                cuadrados = [valor**2 for valor in range(1, 11)]<br>
+                print(cuadrados)
+            </code>
+        </div>
+        [cite_start]<p>➡️ Resultado: `[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]`[cite: 54].</p>
+
+        <h2>🔹 Trabajar con parte de una lista (Rebanadas)</h2>
+        [cite_start]<p>Podés acceder a una **porción** de una lista usando el formato `lista[inicio:fin]`[cite: 57]. [cite_start]El índice final no se incluye, igual que con `range()`[cite: 60].</p>
+        <div class="code-block">
+            <code>
+                jugadores = ['Ana', 'Carlos', 'Lucía', 'Pedro', 'Sofía']<br>
+                print(jugadores[0:3])  <span style="color:#6c757d;"># ['Ana', 'Carlos', 'Lucía']</span><br>
+                print(jugadores[:4])   <span style="color:#6c757d;"># Desde el inicio hasta el índice 3</span><br>
+                print(jugadores[2:])   <span style="color:#6c757d;"># Desde el índice 2 hasta el final</span><br>
+                print(jugadores[-3:])  <span style="color:#6c757d;"># Los últimos tres elementos</span>
+            </code>
+        </div>
+
+        <h3>Copiar listas</h3>
+        [cite_start]<p>Para crear una copia **independiente** de una lista, usá el operador de rebanado **`[:]`**[cite: 66].</p>
+        <div class="code-block">
+            <code>
+                amigos = ['Juan', 'Ana', 'Pedro']<br>
+                nuevos_amigos = amigos[:] <span style="color:#6c757d;"># ¡Copia independiente!</span><br>
+                nuevos_amigos.append('Lucía')<br><br>
+                print(amigos)        <span style="color:#6c757d;"># ['Juan', 'Ana', 'Pedro'] (Original sin cambios)</span><br>
+                print(nuevos_amigos) <span style="color:#6c757d;"># ['Juan', 'Ana', 'Pedro', 'Lucía']</span>
+            </code>
+        </div>
+        <div class="note">
+            [cite_start]⚠️ Si haces `nuevos_amigos = amigos` (sin `[:]`), ambas variables apuntarían al mismo lugar en memoria, y cambiar una cambiaría la otra[cite: 72].
+        </div>
+
+        <h2>🔹 Tuplas (Listas inmutables)</h2>
+        [cite_start]<p>Una **tupla** es como una lista, pero con la diferencia de que **no se puede modificar** (es **inmutable**)[cite: 74]. [cite_start]Se escribe entre **paréntesis**[cite: 75]:</p>
+        <div class="code-block">
+            <code>
+                dimensiones = (200, 50)<br>
+                print(dimensiones[0])
+            </code>
+        </div>
+        [cite_start]<p>💡 **Atención:** Intentar cambiar un valor genera error[cite: 78, 79]. [cite_start]Si querés cambiar los valores, debés crear una tupla nueva[cite: 80].</p>
+
+        <h2>🔹 Buen estilo de código (PEP 8)</h2>
+        [cite_start]<p>El **PEP 8** es la guía oficial de estilo de Python[cite: 82]. [cite_start]Seguir estas reglas mantiene tu código legible y profesional[cite: 101]:</p>
+        <ul>
+            [cite_start]<li>Usa **4 espacios** por nivel de indentación[cite: 83].</li>
+            [cite_start]<li>Líneas de **máximo 79 caracteres**[cite: 84].</li>
+            [cite_start]<li>Deja líneas en blanco para separar secciones lógicas[cite: 85].</li>
+            [cite_start]<li>Usa nombres descriptivos (ej. `edades`, `usuarios_activos`)[cite: 86].</li>
+            [cite_start]<li>Comentá lo justo y necesario[cite: 87].</li>
+        </ul>
+        [cite_start]<p>📘 Recordá: **un código limpio es más importante que un código corto**[cite: 88].</p>
+
+        <h2>🧠 Ejercicios sugeridos</h2>
+        <ul class="exercise-list">
+            [cite_start]<li>**Pizzas:** Crea una lista con tus pizzas favoritas y mostrálas con un bucle `for`[cite: 90].</li>
+            [cite_start]<li>**Cubo de números:** Crea una lista con los cubos de 1 a 10 usando **comprensión de listas**[cite: 92].</li>
+            [cite_start]<li>**Mis amigos y tus amigos:** Copia una lista y agregá nuevos nombres a cada una, asegurándote de que los cambios en una no afecten a la otra (usando `[:]`)[cite: 93].</li>
+            [cite_start]<li>**Buffet:** Crea una **tupla** con 5 comidas de restaurante y luego intenta "cambiar el menú" creando una tupla nueva[cite: 94].</li>
+        </ul>
+        
+        <h2>🏁 Resumen</h2>
+        <ul>
+            [cite_start]<li>Los **bucles `for`** te permiten recorrer listas fácilmente[cite: 96].</li>
+            [cite_start]<li>`range()` genera secuencias numéricas[cite: 97].</li>
+            [cite_start]<li>Las **comprensiones de listas** son una forma rápida de construir nuevas listas[cite: 98].</li>
+            [cite_start]<li>Las **rebanadas (`[:]`)** permiten trabajar con partes o copias independientes de listas[cite: 99].</li>
+            [cite_start]<li>Las **tuplas** son listas que **no cambian** (inmutables)[cite: 100].</li>
+            [cite_start]<li>Seguir **PEP 8** ayuda a mantener un código legible[cite: 101].</li>
+        </ul>
+
+        <a href="capitulo-5.html" class="next-chapter-link">
+            Siguiente: Capítulo 5: Sentencias `if` →
+        </a>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Mi Curso de Python</p>
+    </footer>
+
+</body>
+</html>

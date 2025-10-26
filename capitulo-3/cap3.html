@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3: Introducción a las listas | Curso de Python</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* Estilos específicos para la página de contenido (Reutilizados de caps anteriores) */
+        .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+        }
+        .code-block {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #d63384; 
+        }
+        .note {
+            padding: 15px;
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+        }
+        .tip {
+            padding: 15px;
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+            margin: 20px 0;
+        }
+        .exercise-list li {
+            margin-bottom: 10px;
+        }
+        .next-chapter-link {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .next-chapter-link:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="gallery.html" style="color: white; text-decoration: none; float: left;">← Volver a la Galería</a>
+        <h1>Curso de Python: 20 Capítulos</h1>
+    </header>
+
+    <div class="content-container">
+
+        <h1>📚 Capítulo 3 — Introducción a las listas</h1>
+        <p>Este capítulo está basado en el libro <em>Python Crash Course</em>, traducido y adaptado al español[cite: 1].</p>
+
+        <h2>🎯 Objetivo del capítulo</h2>
+        <p>Aprender qué son las **listas**, cómo crear, modificar y acceder a sus elementos[cite: 4]. Las listas son una de las estructuras de datos más usadas en Python[cite: 5].</p>
+
+        <h2>🔹 ¿Qué es una lista?</h2>
+        <p>Una **lista** es una **colección ordenada de elementos**[cite: 7].</p>
+        <p>Podés guardar dentro de ella cualquier tipo de dato: textos, números, o incluso otras listas[cite: 8].</p>
+        <div class="tip">
+            💡 Las listas se escriben entre **corchetes** `[]` y cada elemento se separa con **comas**[cite: 12].
+        </div>
+        <p>Ejemplo:</p>
+        <div class="code-block">
+            <code>
+                nombres = ['Juan', 'Ana', 'Carlos', 'Lucía'] [cite: 10]<br>
+                print(nombres) [cite: 11]
+            </code>
+        </div>
+        <p>Resultado: `['Juan', 'Ana', 'Carlos', 'Lucía']` [cite: 14]</p>
+
+        <h2>🔹 Acceder a los elementos de una lista</h2>
+        <p>Podés acceder a cualquier elemento usando **su posición** (índice)[cite: 16].</p>
+        <div class="note">
+            ⚠️ En Python, **el primer elemento tiene índice 0**[cite: 17].
+        </div>
+        <div class="code-block">
+            <code>
+                print(nombres[0])  <span style="color:#6c757d;"># Juan</span> [cite: 18]<br>
+                print(nombres[1])  <span style="color:#6c757d;"># Ana</span> [cite: 19]
+            </code>
+        </div>
+        <p>También podés acceder desde el final con **índices negativos**[cite: 20]:</p>
+        <div class="code-block">
+            <code>
+                print(nombres[-1]) <span style="color:#6c757d;"># Lucía (último elemento)</span> [cite: 21]
+            </code>
+        </div>
+        <p>Puedes combinar elementos de una lista con texto[cite: 23]:</p>
+        <div class="code-block">
+            <code>
+                print("Hola, " + nombres[0] + "!") [cite: 24]
+            </code>
+        </div>
+        <p>➡️ Imprime: `Hola, Juan!` [cite: 26]</p>
+
+        <h2>🔹 Cambiar, agregar y eliminar elementos</h2>
+
+        <h3>🧩 Cambiar un valor</h3>
+        <p>Simplemente asigna un nuevo valor al índice[cite: 29]:</p>
+        <div class="code-block">
+            <code>
+                nombres[1] = 'María' [cite: 29]
+            </code>
+        </div>
+
+        <h3>➕ Agregar elementos</h3>
+        <ul>
+            <li>**Al final:** Usa el método `.append()`[cite: 32]:
+                <div class="code-block"><code>nombres.append('Pedro')</code></div>
+            </li>
+            <li>**En una posición específica:** Usa el método `.insert(indice, valor)`[cite: 33]:
+                <div class="code-block"><code>nombres.insert(0, 'Luis') <span style="color:#6c757d;"># se agrega al inicio</span> [cite: 34]</code></div>
+            </li>
+        </ul>
+
+        <h3>❌ Eliminar elementos</h3>
+        <ul>
+            <li>**Por posición:** Usa la instrucción `del`[cite: 36]:
+                <div class="code-block"><code>del nombres[2] <span style="color:#6c757d;"># elimina el elemento en el índice 2</span> [cite: 36]</code></div>
+            </li>
+            <li>**Eliminar el último y guardarlo:** Usa el método `.pop()`[cite: 37]. Es útil si quieres usar el valor eliminado después[cite: 39]:
+                <div class="code-block"><code>eliminado = nombres.pop() <span style="color:#6c757d;"># elimina el último y lo guarda</span> [cite: 37]</code></div>
+            </li>
+            <li>**Por valor:** Usa el método `.remove('valor')`[cite: 38]:
+                <div class="code-block"><code>nombres.remove('María') <span style="color:#6c757d;"># elimina por valor</span> [cite: 38]</code></div>
+            </li>
+        </ul>
+
+        <h2>🔹 Ejemplo práctico</h2>
+        <p>Aquí se simulan varios cambios en una lista de invitados[cite: 41]:</p>
+        <div class="code-block">
+            <code>
+                invitados = ['Ana', 'Carlos', 'Lucía'] [cite: 41] <br><br>
+                <span style="color:#6c757d;"># Si alguien no puede venir:</span> [cite: 45]<br>
+                ausente = invitados.pop(1) [cite: 46] <br>
+                print(ausente + " no podrá asistir.") [cite: 47] <br>
+                invitados.insert(1, 'Sofía') [cite: 48] <br><br>
+                <span style="color:#6c757d;"># Agregar más invitados:</span> [cite: 49]<br>
+                invitados.append('Pedro') [cite: 50] <br><br>
+                print("Lista final de invitados:", invitados) [cite: 52]
+            </code>
+        </div>
+
+        <h2>🔹 Organizar listas</h2>
+        
+        <ul>
+            <li>**Ordenar permanentemente:** Usa el método `.sort()`.
+                <div class="code-block"><code>nombres.sort()</code> [cite: 55]</div>
+            </li>
+            <li>**Ordenar temporalmente:** Usa la función `sorted()`. Esto no modifica la lista original.
+                <div class="code-block"><code>print(sorted(nombres))</code> [cite: 57]</div>
+            </li>
+            <li>**Invertir el orden (permanente):** Usa el método `.reverse()`.
+                <div class="code-block"><code>nombres.reverse()</code> [cite: 59]</div>
+            </li>
+            <li>**Longitud de una lista:** Usa la función `len()`. Te dice cuántos elementos hay[cite: 61, 62].
+                <div class="code-block"><code>print(len(nombres))</code> [cite: 61]</div>
+            </li>
+        </ul>
+
+        <h2>🔹 Errores comunes</h2>
+        <p>Intentar acceder a una posición que no existe genera un error llamado **`IndexError: list index out of range`**[cite: 64, 67].</p>
+        <div class="code-block">
+            <code>
+                print(nombres[10]) [cite: 65]
+            </code>
+        </div>
+        <p>📘 Esto significa que estás pidiendo una posición que está fuera del rango de la lista[cite: 68].</p>
+
+        <h2>🧠 Ejercicios sugeridos</h2>
+        <ul class="exercise-list">
+            <li>**Lista de amigos:** Crea una lista con varios nombres y saludalos uno por uno[cite: 70].</li>
+            <li>**Lista de autos:** Crea una lista con marcas de autos y muestra frases como “Me gustaría tener un Toyota.”[cite: 71].</li>
+            <li>**Cena de invitados:** Agrega y elimina invitados según distintas situaciones, practicando todos los métodos de modificación[cite: 72].</li>
+            <li>**Ordenar ciudades:** Practica con `sorted()`, `reverse()` y `len()`[cite: 73].</li>
+        </ul>
+        
+        <h2>🏁 Resumen</h2>
+        <ul>
+            <li>Las **listas** guardan múltiples elementos en una sola variable[cite: 75].</li>
+            <li>Los **índices** empiezan en **0**[cite: 76].</li>
+            <li>Podés **modificar, agregar o eliminar** elementos fácilmente[cite: 77].</li>
+            <li>Existen herramientas como `.sort()`, `sorted()`, `.reverse()` y `len()` para **ordenar, invertir y contar** elementos[cite: 78].</li>
+            <li>Son una base fundamental para la programación en Python[cite: 79].</li>
+        </ul>
+
+        <a href="capitulo-4.html" class="next-chapter-link">
+            Siguiente: Capítulo 4: Trabajando con listas →
+        </a>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Mi Curso de Python</p>
+    </footer>
+
+</body>
+</html>
