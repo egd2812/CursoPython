@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1: Introducción y primeros pasos | Curso de Python</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* Estilos específicos para la página de contenido */
+        .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+        }
+        .code-block {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #d63384; /* Color de sintaxis simulado */
+        }
+        .note {
+            padding: 15px;
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+        }
+        .exercise-list li {
+            margin-bottom: 10px;
+        }
+        .next-chapter-link {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .next-chapter-link:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="gallery.html" style="color: white; text-decoration: none; float: left;">← Volver a la Galería</a>
+        <h1>Curso de Python: 20 Capítulos</h1>
+    </header>
+
+    <div class="content-container">
+
+        <h1>🐍 Capítulo 1 — Introducción y primeros pasos</h1>
+
+        <p>Este capítulo está basado en el libro <em>Python Crash Course</em>, en una versión explicada y adaptada al español[cite: 1].</p>
+
+        <h2>🎯 Objetivo del capítulo</h2>
+        <p>Aprender qué es Python, cómo instalarlo en tu computadora y cómo ejecutar tus primeros programas[cite: 4].</p>
+
+        <h2>🔹 ¿Qué es Python?</h2>
+        <p>Python es un lenguaje de programación **sencillo, poderoso y muy popular**[cite: 6].</p>
+        <p>Se utiliza para crear una gran variedad de cosas, desde scripts pequeños hasta sitios web, inteligencia artificial, análisis de datos, videojuegos y automatización[cite: 7].</p>
+        <blockquote>
+            El lema de Python es: “Es mejor escribir código claro que complicado.” [cite: 8, 9]
+        </blockquote>
+        <p>Python se centra en que el código sea fácil de leer y mantener[cite: 10].</p>
+
+        <h2>🔹 Python 2 vs Python 3</h2>
+        <p>Existen dos versiones principales del lenguaje[cite: 12]:</p>
+        <ul>
+            <li>**Python 2:** Es la versión antigua, y ya no tiene soporte desde el año 2020[cite: 13].</li>
+            <li>**Python 3:** Es la versión **actual y recomendada**[cite: 14].</li>
+        </ul>
+        <div class="note">
+            💡 **Recomendación:** Usa siempre **Python 3**, ya que todas las librerías modernas funcionan allí[cite: 15].
+        </div>
+
+        <h2>🔹 Tu primer programa: “Hola, mundo”</h2>
+        <p>El primer paso clásico en cualquier lenguaje de programación es imprimir un mensaje[cite: 17].</p>
+        <div class="code-block">
+            <code>print("Hola, mundo!")</code>
+        </div>
+        <p>Este programa muestra texto en la pantalla[cite: 19]. Al ejecutarlo, el resultado será simplemente:</p>
+        <div class="code-block">
+            <code>Hola, mundo!</code>
+        </div>
+        <p>Así de simple: escribes una instrucción y Python la ejecuta[cite: 21].</p>
+
+        <h2>🔹 Cómo ejecutar Python</h2>
+        
+        <h3>🧠 Opción 1: Desde la consola interactiva</h3>
+        <p>Abre la terminal (o símbolo del sistema) y escribe:</p>
+        <div class="code-block">
+            <code>python</code>
+        </div>
+        <p>Verás un *prompt* (>>>) donde puedes escribir código directamente y ver el resultado al instante[cite: 28, 29].</p>
+        
+        <h3>🧩 Opción 2: Ejecutar un archivo `.py`</h3>
+        <p>1. Crea un archivo llamado `hola.py` con el contenido del programa "Hola, mundo"[cite: 31, 32].</p>
+        <p>2. Luego ejecútalo desde la terminal con el comando:</p>
+        <div class="code-block">
+            <code>python hola.py</code>
+        </div>
+
+        <h2>🔹 Instalación de Python</h2>
+        <ul>
+            <li>**Linux y macOS:** Python suele venir preinstalado en estos sistemas[cite: 36].</li>
+            <li>**Windows:** Puedes descargarlo desde <a href="https://www.python.org/downloads" target="_blank">https://www.python.org/downloads</a>[cite: 37].</li>
+        </ul>
+        <div class="note">
+            ⚠️ **Importante en Windows:** Durante la instalación, **marcá la casilla “Add Python to PATH”**. Esto es crucial para poder usar el comando `python` desde cualquier carpeta[cite: 38].
+        </div>
+
+        <h2>🔹 Tu entorno de trabajo y errores comunes</h2>
+        <p>Puedes usar cualquier editor de texto (como Visual Studio Code)[cite: 40]. Sin embargo, si eres principiante, **IDLE** viene incluido con Python y suele ser la opción preferida[cite: 41].</p>
+
+        <h3>Resolviendo errores comunes [cite: 42]</h3>
+        <ul>
+            <li>Si el programa no ejecuta, revisa que el archivo tenga la extensión **`.py`**[cite: 43].</li>
+            <li>Si la terminal dice “Python no se reconoce…”, es probable que no esté agregado al PATH (ver nota de instalación)[cite: 44].</li>
+            <li>Revisa cuidadosamente mayúsculas, comillas y paréntesis, ya que Python distingue minúsculas de mayúsculas[cite: 45].</li>
+        </ul>
+
+        <h2>🧠 Ejercicios sugeridos</h2>
+        <ul class="exercise-list">
+            <li>**Hola Python:** Crea tu propio mensaje en lugar de “Hola, mundo”[cite: 47].</li>
+            <li>**Errores de escritura:** Borra una comilla o paréntesis y observa el mensaje de error que aparece. ¡Aprender a leer errores es clave![cite: 48].</li>
+            <li>**Usar la terminal:** Ejecuta tu programa varias veces para practicar el proceso[cite: 49].</li>
+        </ul>
+        
+        <h2>🏁 Resumen</h2>
+        <p>Python es un lenguaje versátil y fácil de aprender[cite: 51].</p>
+        <p>Tu primer paso es instalarlo y crear un archivo con el comando `print()`[cite: 52].</p>
+        <p>Entender cómo ejecutar y corregir errores simples es esencial antes de avanzar[cite: 53].</p>
+
+        <a href="capitulo-2.html" class="next-chapter-link">
+            Siguiente: Capítulo 2: Variables y tipos de datos simples →
+        </a>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Mi Curso de Python</p>
+    </footer>
+
+</body>
+</html>
